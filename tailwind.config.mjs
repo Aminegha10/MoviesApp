@@ -7,9 +7,11 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      fontFamily: {
+        Cursive: ["Cursive"],
+      },
+      backgroundColor: {
+        bgColor: "#00031c",
       },
     },
   },
