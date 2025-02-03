@@ -10,7 +10,7 @@ const navbar = () => {
       <nav
         className=" bg-bgColor p-[15px] flex justify-between items-center shadow-2xl z-1 "
         style={{
-          boxShadow: "-19px 6px 18px 15px #000",
+          // boxShadow: "-19px 6px 18px 15px #000", // i  disabled this for now because it effects other pages
           position: "sticky",
           zIndex: 10,
           top: 0,
@@ -22,7 +22,7 @@ const navbar = () => {
           <li>Home</li>
           <li>Movies</li>
           <li>
-            <Link href="/price">Price</Link>
+            <Link href="/plans">Plans</Link>
           </li>
           <li>Contact Us</li>
         </ul>
