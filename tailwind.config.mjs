@@ -8,7 +8,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        Cursive: ["Cursive"],
+        // Cursive: ["Cursive"],
       },
       backgroundColor: {
         bgColor: "#00031c",
