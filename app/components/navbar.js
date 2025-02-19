@@ -1,52 +1,79 @@
 "use client";
-
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import { CgProfile } from "react-icons/cg";
 
-const navbar = () => {
+const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  const handleScroll = () => {
+    const scrollTop = window.scrollY;
+    setIsScrolled(scrollTop > 0);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <>
-      {" "}
-      {/* NavBar */}
+    <header className="relative z-10">
       <nav
-        className=" bg-bgColor p-[15px] flex justify-between items-center shadow-2xl z-1 "
-        style={{
-          boxShadow: "-19px 6px 18px 15px #000",
-          position: "sticky",
-          zIndex: 10,
-          top: 0,
-        }}
+        className={`fixed flex justify-between top-0 left-0 right-0 bg-transparent px-4 py-2 z-20 transition-all duration-300 ${
+          isScrolled
+            ? "backdrop-brightness-75 backdrop-blur-md"
+            : "bg-opacity-100"
+        }`}
       >
-        {/* LeftSide */}
         <ul className="flex gap-5 items-center text-[20px]">
-          <li className="text-[2.5em]">LOGO</li>
-          <li>Home</li>
-          <li>Movies</li>
-          <li>
-            <Link href="/price">Price</Link>
-          </li>
-          <li>Contact Us</li>
+          <Link href="/">
+            <img className="w-20 cursor-pointer" src="/LOGO.png" alt="Logo" />
+          </Link>
+          {["Home", "Movies", "Price", "Contact Us"].map((text, index) => {
+            const href =
+              text === "Home"
+                ? "/"
+                : `/${text.toLowerCase().replace(/\s+/g, "")}`;
+            return (
+              <li key={index} className="relative cursor-pointer">
+                <Link
+                  href={href}
+                  className="relative pb-2 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[3px] after:bg-[#6366f1] after:transition-all after:duration-300 hover:after:w-full"
+                >
+                  {text}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
-        {/* RightSide */}
+
         <div className="flex gap-3 items-center">
           <input
             type="text"
             placeholder="Find Movies, TV shows and"
-            className="p-2 border-none rounded-xl"
+            className="p-2 border bg-transparent placeholder:text-white rounded-xl"
           />
-          <select name="" id="" className="text-black bg-none rounded-md">
+          <select
+            name=""
+            id=""
+            className="text-white bg-transparent rounded-md"
+          >
             <option value="">ENG</option>
             <option value="">ENG</option>
             <option value="">ENG</option>
             <option value="">ENG</option>
           </select>
+          <CgProfile className="text-[30px]" />
           <i className="fa-solid fa-globe" />
-          <button className="bg-gradient-to-tr from-purple-500 to-indigo-500 py-[15px] px-[31px] rounded-[30px]">
+          {/* <button className="bg-gradient-to-tr from-purple-500 to-indigo-500 hover:bg-gradient-to-tr hover:from-purple-600 hover:to-indigo-500 py-[10px] px-[31px] rounded-[30px]">
             Subscribe
-          </button>
+          </button> */}
         </div>
       </nav>
-    </>
+    </header>
   );
 };
 
-export default navbar;
+export default Navbar;

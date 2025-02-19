@@ -18,12 +18,14 @@ export const metadata = {
 
 import Footer from "./components/footer";
 import NavBar from "./components/navbar";
+
 // ..
 export default function RootLayout({ children }) {
+  
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased font-Cursive`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased font-ourFont`}
       >
         {/* NavBar */}
         <NavBar />

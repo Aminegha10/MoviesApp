@@ -1,11 +1,12 @@
-import React from 'react'
 
-const layout = () => {
+
+const layout = ({ children }) => {
   return (
-    <div>
-      ContactUs
-    </div>
-  )
-}
+    <>
+      <div className="bg-bgColor py-32 ">{children}</div>
+    </>
+  );
+  
+};
 
-export default layout
+export default layout;

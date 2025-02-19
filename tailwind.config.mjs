@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 export default {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,6 +10,7 @@ export default {
     extend: {
       fontFamily: {
         Cursive: ["Cursive"],
+        ourFont: ["amine"],
       },
       backgroundColor: {
         bgColor: "#00031c",
@@ -16,4 +18,5 @@ export default {
     },
   },
   plugins: [],
+  
 };

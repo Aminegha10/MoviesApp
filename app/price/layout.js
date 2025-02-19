@@ -1,11 +1,6 @@
-import React from 'react'
 
-const layout = () => {
-  return (
-    <div>
-      Price
-    </div>
-  )
-}
+const layout = ({ children }) => {
+  return children ;
+};
 
-export default layout
+export default layout;
