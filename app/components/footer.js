@@ -1,11 +1,8 @@
 "use client";
 import Download from "@/public/Download.png";
 import Image from "next/image";
-import { FaFacebook } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
+import { FaFacebook, FaTwitter, FaGithub } from "react-icons/fa";
 
-import { useEffect } from "react";
 const footer = () => {
   return (
     <>
