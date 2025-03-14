@@ -17,13 +17,13 @@ const page = () => {
     });
   }, []);
   return (
-    <section className="bg-white font-normal dark:bg-gray-900">
+    <section className="bg-white pt-4 md:pt-0 font-normal dark:bg-gray-900">
       <div className="max-w-screen-xl px-4 py-8 mx-auto lg:pb-24 lg:pt-[10rem] lg:px-6">
         <div className="max-w-screen-md mx-auto mb-8 text-center lg:mb-12">
-          <h2 className="mb-4 text-3xl  tracking-tight text-gray-900 dark:text-white">
+          <h2 className="hidden md:block  mb-4 text-3xl  tracking-tight text-gray-900 dark:text-white">
             Plans
           </h2>
-          <p className="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400">
+          <p className="hidden md:block mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400">
             Choose the plan that's right for you
           </p>
         </div>

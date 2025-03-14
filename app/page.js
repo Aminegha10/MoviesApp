@@ -7,8 +7,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // import required modules
 import { Pagination, Autoplay } from "swiper/modules";
 import { FaStar } from "react-icons/fa";
-import AOS from "aos";
-import "aos/dist/aos.css"; // You can also use <link> for styles
+// import AOS from "aos";
+// import "aos/dist/aos.css"; // You can also use <link> for styles
 import { useEffect, useState } from "react";
 import { MdSaveAlt } from "react-icons/md";
 import Link from "next/link";
@@ -64,26 +64,26 @@ export default function Home() {
       window.addEventListener("scroll", handleScroll);
     }
 
-    AOS.init({
-      // Global settings:
-      disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
-      startEvent: "DOMContentLoaded", // name of the event dispatched on the document, that AOS should initialize on
-      initClassName: "aos-init", // class applied after initialization
-      animatedClassName: "aos-animate", // class applied on animation
-      useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
-      disableMutationObserver: false, // disables automatic mutations' detections (advanced)
-      debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
-      throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+    // AOS.init({
+    //   // Global settings:
+    //   disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+    //   startEvent: "DOMContentLoaded", // name of the event dispatched on the document, that AOS should initialize on
+    //   initClassName: "aos-init", // class applied after initialization
+    //   animatedClassName: "aos-animate", // class applied on animation
+    //   useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+    //   disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+    //   debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+    //   throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
 
-      // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
-      offset: 40, // offset (in px) from the original trigger point
-      delay: 0, // values from 0 to 3000, with step 50ms
-      duration: 1500, // values from 0 to 3000, with step 50ms
-      easing: "ease", // default easing for AOS animations
-      once: false, // whether animation should happen only once - while scrolling down
-      mirror: false, // whether elements should animate out while scrolling past them
-      anchorPlacement: "top-bottom", // defines which position of the element regarding to window should trigger the animation
-    });
+    //   // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+    //   offset: 40, // offset (in px) from the original trigger point
+    //   delay: 0, // values from 0 to 3000, with step 50ms
+    //   duration: 1500, // values from 0 to 3000, with step 50ms
+    //   easing: "ease", // default easing for AOS animations
+    //   once: false, // whether animation should happen only once - while scrolling down
+    //   mirror: false, // whether elements should animate out while scrolling past them
+    //   anchorPlacement: "top-bottom", // defines which position of the element regarding to window should trigger the animation
+    // });
     console.log("AOS initialized");
     return () => {
       if (typeof window !== "undefined") {
@@ -112,53 +112,9 @@ export default function Home() {
                 >
                   <div className="h-full  backdrop-brightness-50 flex flex-col items-start justify-center gap-3 px-5 pb-5 pt-24">
                     {/* Movie Title */}
-                    <div className="font-bold text-[3rem]">{movie.title}</div>
-                    {/* Rating */}
-                    {/* <div className="flex space-x-4 items-center">
-                      <div className="flex items-center">
-                        <svg
-                          width="35"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                          stroke="white"
-                        >
-                          <defs>
-                            <linearGradient
-                              id="grad"
-                              x1="0%"
-                              y1="0%"
-                              x2="100%"
-                              y2="100%"
-                            >
-                              <stop
-                                offset="0%"
-                                style={{
-                                  stopColor: "rgb(168,85,247)",
-                                  stopOpacity: 1,
-                                }}
-                              />{" "}
-                              <stop
-                                offset="100%"
-                                style={{
-                                  stopColor: "rgb(99,102,241)",
-                                  stopOpacity: 1,
-                                }}
-                              />{" "}
-                            </linearGradient>
-                          </defs>
-                          <path
-                            d="M12 2L14.09 8.26H20.18L15.09 12.74L17.18 19L12 15.52L6.82 19L8.91 12.74L3.82 8.26H9.91L12 2Z"
-                            fill="url(#grad)"
-                          />
-                        </svg>
-                        <span className="align-middle">{movie.rating}</span>
-                      </div>
-                      <div>{movie.year}</div>
-                      <div>{movie.duration}</div>
-                    </div> */}
+                    <div className="font-bold text-[2rem] md:text-[3rem]">{movie.title}</div>
                     {/* Description */}
-                    <div className="text-start max-w-2xl text-gray-300">
+                    <div className="text-start md:text-[16px] text-[16px] max-w-2xl text-gray-300">
                       {movie.description}
                     </div>
                     {/* Buttons */}
@@ -191,8 +147,105 @@ export default function Home() {
           </Swiper>
         </section>
         {/* Movies Section */}
-        <section className="p-5 space-y-10 pb-24">
+        <section className="p-5 space-y-10 md:pb-24">
           {/* New */}
+
+          {/* Movies list */}
+          <div>
+            {/* newRelease */}
+            {/* <div className="flex text-[20px] justify-between py-8">
+              <div>
+                <span className="border border-solid border-white p-2">
+                  New release
+                </span>
+              </div>
+              <div>
+                <span className="border border-solid border-white p-2">
+                  View All
+                </span>
+              </div>
+            </div> */}
+            {/* Movies list */}
+            <div
+              className="flex gap-8 overflow-auto py-5 scrollbar-hide"
+              data-aos="zoom-in-up"
+            >
+              <div className="shrink-0">
+                <img
+                  className="h-[400px] rounded-md w-[270px] object-cover cursor-pointer transition-transform duration-300 md:hover:scale-105"
+                  src="https://fr.web.img4.acsta.net/pictures/22/05/18/14/31/5186184.jpg"
+                  alt=""
+                />
+                <div className="pt-4 pb-2">Stranger Things</div>
+                <div className="text-gray-500 ">Action - Thriller</div>
+              </div>
+              <div className=" shrink-0">
+                <img
+                  className="h-[400px] rounded-lg w-[270px] object-cover cursor-pointer transition-transform duration-300 md:hover:scale-105 "
+                  src="https://m.media-amazon.com/images/M/MV5BNmM4YTFmMmItMGE3Yy00MmRkLTlmZGEtMzZlOTQzYjk3MzA2XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg"
+                  alt=""
+                />
+                <div className="pt-4 pb-2">Howl's Moving Castle</div>
+                <div className="text-gray-500 ">Action - Thriller</div>
+              </div>
+              <div className="shrink-0">
+                <img
+                  className="h-[400px] rounded-lg w-[270px] object-cover cursor-pointer transition-transform duration-300 md:hover:scale-105 "
+                  src="https://m.media-amazon.com/images/I/81MJv+WKb9L._AC_UF894,1000_QL80_.jpg"
+                  alt=""
+                />
+                <div className="pt-4 pb-2">Mad Max</div>
+                <div className="text-gray-500 ">Action - Thriller</div>
+              </div>
+              <div className="shrink-0">
+                <img
+                  className="h-[400px] rounded-lg w-[270px] object-cover cursor-pointer transition-transform duration-300 md:hover:scale-105"
+                  src="https://m.media-amazon.com/images/I/91vya3UmldL._AC_UF894,1000_QL80_.jpg"
+                  alt=""
+                />
+                <div className="pt-4 pb-2">Drive</div>
+                <div className="text-gray-500 ">Action - Thriller</div>
+              </div>
+              <div className="shrink-0">
+                <img
+                  className="h-[400px] rounded-lg w-[270px] object-cover cursor-pointer transition-transform duration-300 md:hover:scale-105"
+                  src="https://m.media-amazon.com/images/M/MV5BMTQ5ODMxNTIyNV5BMl5BanBnXkFtZTcwNjQ1ODgyNQ@@._V1_.jpg"
+                  alt=""
+                />
+                <div className="pt-4 pb-2">Submarine</div>
+                <div className="text-gray-500 ">Action - Thriller</div>
+              </div>
+              <div className="shrink-0">
+                <img
+                  className="h-[400px] rounded-lg w-[270px] object-cover cursor-pointer transition-transform duration-300 md:hover:scale-105"
+                  src="https://m.media-amazon.com/images/M/MV5BMTQ5ODMxNTIyNV5BMl5BanBnXkFtZTcwNjQ1ODgyNQ@@._V1_.jpg"
+                  alt=""
+                />
+                <div className="pt-4 pb-2">Submarine</div>
+                <div className="text-gray-500 ">Action - Thriller</div>
+              </div>{" "}
+              <div className="shrink-0">
+                <img
+                  className="h-[400px] rounded-lg w-[270px] object-cover cursor-pointer transition-transform duration-300 md:hover:scale-105"
+                  src="https://m.media-amazon.com/images/M/MV5BMTQ5ODMxNTIyNV5BMl5BanBnXkFtZTcwNjQ1ODgyNQ@@._V1_.jpg"
+                  alt=""
+                />
+                <div className="pt-4 pb-2">Submarine</div>
+                <div className="text-gray-500 ">Action - Thriller</div>
+              </div>
+            </div>
+          </div>
+
+          {/* New  */}
+
+          {/* Featured */}
+
+          {/* featuredMovies */}
+          <div className="flex text-[20px] justify-between py-8">
+            <div className="glass">Featured Movies</div>
+            <div>View All</div>
+          </div>
+          {/* Movies list */}
 
           <div>
             {/* newRelease */}
@@ -209,46 +262,67 @@ export default function Home() {
               </div>
             </div> */}
             {/* Movies list */}
-            <div className="flex gap-8" data-aos="zoom-in-up">
-              <div>
+            <div
+              className="flex gap-8 py-5 overflow-x-auto scrollbar-hide w-full"
+              data-aos="fade-right"
+            >
+              <div className="shrink-0">
                 <img
-                  className="h-[400px] rounded-md w-[288px] object-cover cursor-pointer transition-transform duration-300 hover:scale-105"
+                  className="h-[400px] rounded-md w-[270px] object-cover cursor-pointer transition-transform duration-300 hover:scale-105"
                   src="https://fr.web.img4.acsta.net/pictures/22/05/18/14/31/5186184.jpg"
                   alt=""
                 />
                 <div className="pt-4 pb-2">Stranger Things</div>
                 <div className="text-gray-500 ">Action - Thriller</div>
               </div>
-              <div className=" ">
+              <div className=" shrink-0">
                 <img
-                  className="h-[400px] rounded-lg w-[288px] object-cover cursor-pointer transition-transform duration-300 hover:scale-105 "
+                  className="h-[400px] rounded-lg w-[270px] object-cover cursor-pointer transition-transform duration-300 hover:scale-105 "
                   src="https://m.media-amazon.com/images/M/MV5BNmM4YTFmMmItMGE3Yy00MmRkLTlmZGEtMzZlOTQzYjk3MzA2XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg"
                   alt=""
                 />
                 <div className="pt-4 pb-2">Howl's Moving Castle</div>
                 <div className="text-gray-500 ">Action - Thriller</div>
               </div>
-              <div className="">
+              <div className="shrink-0">
                 <img
-                  className="h-[400px] rounded-lg w-[288px] object-cover cursor-pointer transition-transform duration-300 hover:scale-105 "
+                  className="h-[400px] rounded-lg w-[270px] object-cover cursor-pointer transition-transform duration-300 hover:scale-105 "
                   src="https://m.media-amazon.com/images/I/81MJv+WKb9L._AC_UF894,1000_QL80_.jpg"
                   alt=""
                 />
                 <div className="pt-4 pb-2">Mad Max</div>
                 <div className="text-gray-500 ">Action - Thriller</div>
               </div>
-              <div className="">
+              <div className="shrink-0">
                 <img
-                  className="h-[400px] rounded-lg w-[288px] object-cover cursor-pointer transition-transform duration-300 hover:scale-105"
+                  className="h-[400px] rounded-lg w-[270px] object-cover cursor-pointer transition-transform duration-300 hover:scale-105"
                   src="https://m.media-amazon.com/images/I/91vya3UmldL._AC_UF894,1000_QL80_.jpg"
                   alt=""
                 />
                 <div className="pt-4 pb-2">Drive</div>
                 <div className="text-gray-500 ">Action - Thriller</div>
               </div>
-              <div className="">
+              <div className="shrink-0">
                 <img
-                  className="h-[400px] rounded-lg w-[288px] object-cover cursor-pointer transition-transform duration-300 hover:scale-105"
+                  className="h-[400px] rounded-lg w-[270px] object-cover cursor-pointer transition-transform duration-300 hover:scale-105"
+                  src="https://m.media-amazon.com/images/M/MV5BMTQ5ODMxNTIyNV5BMl5BanBnXkFtZTcwNjQ1ODgyNQ@@._V1_.jpg"
+                  alt=""
+                />
+                <div className="pt-4 pb-2">Submarine</div>
+                <div className="text-gray-500 ">Action - Thriller</div>
+              </div>
+              <div className="shrink-0">
+                <img
+                  className="h-[400px] rounded-lg w-[270px] object-cover cursor-pointer transition-transform duration-300 hover:scale-105"
+                  src="https://m.media-amazon.com/images/M/MV5BMTQ5ODMxNTIyNV5BMl5BanBnXkFtZTcwNjQ1ODgyNQ@@._V1_.jpg"
+                  alt=""
+                />
+                <div className="pt-4 pb-2">Submarine</div>
+                <div className="text-gray-500 ">Action - Thriller</div>
+              </div>{" "}
+              <div className="shrink-0">
+                <img
+                  className="h-[400px] rounded-lg w-[270px] object-cover cursor-pointer transition-transform duration-300 hover:scale-105"
                   src="https://m.media-amazon.com/images/M/MV5BMTQ5ODMxNTIyNV5BMl5BanBnXkFtZTcwNjQ1ODgyNQ@@._V1_.jpg"
                   alt=""
                 />
@@ -257,67 +331,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-
-          {/* New  */}
-
-          {/* Featured */}
-
-          <div>
-            {/* featuredMovies */}
-            <div className="flex text-[20px] justify-between py-8">
-              <div className="glass">Featured Movies</div>
-              <div>View All</div>
-            </div>
-            {/* Movies list */}
-            <div className="flex gap-8 mb-20" data-aos="fade-right">
-              <div className=" h-[400px] w-[288px]">
-                <img
-                  className="h-full object-cover cursor-pointer transition-transform duration-300 hover:scale-105"
-                  src="https://fr.web.img4.acsta.net/pictures/22/05/18/14/31/5186184.jpg"
-                  alt=""
-                />
-                <div className="pt-4 pb-2">Howl's Moving Castle</div>
-                <div className="text-gray-500 ">Action - Thriller</div>
-              </div>
-              <div className=" h-[400px] w-[288px]">
-                <img
-                  className="h-full object-cover cursor-pointer transition-transform duration-300 hover:scale-105"
-                  src="https://m.media-amazon.com/images/M/MV5BNmM4YTFmMmItMGE3Yy00MmRkLTlmZGEtMzZlOTQzYjk3MzA2XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg"
-                  alt=""
-                />
-                <div className="pt-4 pb-2">Howl's Moving Castle</div>
-                <div className="text-gray-500 ">Action - Thriller</div>
-              </div>
-              <div className=" h-[400px] w-[288px]">
-                <img
-                  className="h-full object-cover cursor-pointer transition-transform duration-300 hover:scale-105"
-                  src="https://m.media-amazon.com/images/I/81MJv+WKb9L._AC_UF894,1000_QL80_.jpg"
-                  alt=""
-                />
-                <div className="pt-4 pb-2">Howl's Moving Castle</div>
-                <div className="text-gray-500 ">Action - Thriller</div>
-              </div>
-              <div className=" h-[400px] w-[288px]">
-                <img
-                  className="h-full object-cover cursor-pointer transition-transform duration-300 hover:scale-105"
-                  src="https://m.media-amazon.com/images/I/91vya3UmldL._AC_UF894,1000_QL80_.jpg"
-                  alt=""
-                />
-                <div className="pt-4 pb-2">Howl's Moving Castle</div>
-                <div className="text-gray-500 ">Action - Thriller</div>
-              </div>
-              <div className=" h-[400px] w-[288px]">
-                <img
-                  className="h-full object-cover cursor-pointer transition-transform duration-300 hover:scale-105"
-                  src="https://m.media-amazon.com/images/M/MV5BMTQ5ODMxNTIyNV5BMl5BanBnXkFtZTcwNjQ1ODgyNQ@@._V1_.jpg"
-                  alt=""
-                />
-                <div className="pt-4 pb-2">Howl's Moving Castle</div>
-                <div className="text-gray-500 ">Action - Thriller</div>
-              </div>
-            </div>
-          </div>
-
           {/* Featured  */}
         </section>
 
