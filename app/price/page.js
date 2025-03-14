@@ -24,7 +24,7 @@ const page = () => {
             Plans
           </h2>
           <p className="hidden md:block mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400">
-            Choose the plan that's right for you
+            Choose the plan thats right for you
           </p>
         </div>
         <div className="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
