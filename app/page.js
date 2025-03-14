@@ -132,7 +132,7 @@ export default function Home() {
                         <span className="ml-3">Watch Movie</span>
                       </a>
                       <a
-                        className="group flex h-min  items-center disabled:opacity-50 disabled:hover:opacity-50 hover:opacity-95 justify-center ring-none rounded-lg shadow-lg font-semibold py-2 px-4 font-dm focus:outline-none hover:border focus-visible:outline-2 focus-visible:outline-offset-2 bg-[#6366f1]  disabled:bg-violet-500 disabled:text-white  text-white  hover:border-0 active:border-0 hover:text-gray-100 active:bg-violet-800 active:text-gray-300 focus-visible:outline-violet-500 text-sm sm:text-base "
+                        className="group flex h-min  items-center disabled:opacity-50 disabled:hover:opacity-50 hover:opacity-95 justify-center ring-none rounded-lg shadow-lg font-semibold py-2 px-4 font-dm focus:outline-none  focus-visible:outline-2 focus-visible:outline-offset-2 bg-[#6366f1]  disabled:bg-violet-500 disabled:text-white  text-white  hover:border-0 active:border-0 hover:text-gray-100 active:bg-violet-800 active:text-gray-300 focus-visible:outline-violet-500 text-sm sm:text-base "
                         href=""
                       >
                         <span className="mr-3"> More Info</span>
