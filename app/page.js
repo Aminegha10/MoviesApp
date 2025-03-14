@@ -7,8 +7,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // import required modules
 import { Pagination, Autoplay } from "swiper/modules";
 import { FaStar } from "react-icons/fa";
-// import AOS from "aos";
-// import "aos/dist/aos.css"; // You can also use <link> for styles
+import AOS from "aos";
+import "aos/dist/aos.css"; // You can also use <link> for styles
 import { useEffect, useState } from "react";
 import { MdSaveAlt } from "react-icons/md";
 import Link from "next/link";
